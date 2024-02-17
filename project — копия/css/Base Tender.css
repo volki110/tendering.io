@@ -1,0 +1,197 @@
+/* Общие стили для всего документа */
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://eimg.pravda.com/images/doc/8/0/8004b5e-investitsii.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter: blur(5px);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Добавлен шрифт для текста */
+}
+
+/* Дополнительные стили для контейнера подвала */
+footer {
+    position: relative;
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Стили для кнопки "Наверх" */
+#myBtn {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #ff6600;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background-color: #00ffff;
+}
+
+.employee img {
+    width: 100%; /* Изменено на 100% для растяжения изображений по ширине родительского элемента */
+    height: auto;
+}
+
+/* Стили для верхней части страницы (шапка) */
+header {
+    background-color:  #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 36px;
+    margin: 0;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для контейнера с основным содержимым страницы */
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Изменено на полупрозрачный белый цвет фона */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для основного содержимого страницы */
+.content {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Стили для разделов с информацией */
+.section {
+    margin-top: 40px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    border-bottom: 2px solid #343a40;
+    padding-bottom: 10px;
+    color: #343a40;
+}
+
+/* Стили для кнопок */
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #FFA500;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #00bfff; /* Изменено на яркий синий цвет при наведении */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+/* Анимация для открытия модального окна */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.modal-content {
+    background-image: url('https://24tv.ua/resources/photos/news/202205/1991916.jpg?v=1660555481000'); /* Путь к вашему изображению */
+    background-size: cover; /* Масштабировать изображение по размеру контейнера */
+    background-position: center; /* Центрировать изображение */
+    padding: 20px; /* Добавляем внутренние отступы для текста */
+    background-color: #fefefe;
+    position: absolute;
+    top: 20%; /* Устанавливаем верхнюю границу модального окна на 20% от верхней границы страницы */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #888;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center; /* Выравниваем текст по центру */
+}
+
+.modal-text {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#openModalBtn {
+    background-color: #FFA500;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#openModalBtn:hover {
+    background-color: #00ffff;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+

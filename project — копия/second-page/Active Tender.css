@@ -1,0 +1,93 @@
+/* Общие стили для всего документа */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Шрифт текста на странице */
+    background-color: #f8f9fa; /* Цвет фона страницы */
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы */
+    color: #333; /* Основной цвет текста */
+}
+
+/* Стили для верхней части страницы (шапка) */
+
+header {
+    background-color: #343a40; /* Цвет фона шапки */
+    color: #fff; /* Цвет текста в шапке */
+    padding: 20px 0; /* Отступы сверху и снизу в шапке */
+    text-align: center; /* Выравнивание текста по центру */
+    font-size: 36px; /* Размер шрифта заголовка в шапке */
+}
+
+header h1 {
+    margin: 0; /* Убираем внешние отступы для заголовка */
+    padding: 0; /* Убираем внутренние отступы для заголовка */
+    color: #fff; /* Цвет текста заголовка в шапке */
+}
+
+/* Стили для контейнера с основным содержимым страницы */
+
+.container {
+    max-width: 960px; /* Максимальная ширина контейнера */
+    margin: 20px auto; /* Отступы сверху и снизу, автоматическое выравнивание по центру */
+    padding: 20px; /* Внутренние отступы контейнера */
+    background-color: #fff; /* Цвет фона контейнера */
+    border-radius: 10px; /* Закругление углов контейнера */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Тень контейнера */
+}
+
+/* Стили для основного содержимого страницы */
+
+.content {
+    margin-top: 20px; /* Отступ сверху для основного содержимого */
+    font-size: 18px; /* Размер шрифта основного текста */
+    line-height: 1.6; /* Высота строки текста */
+}
+
+/* Стили для разделов с информацией */
+
+.section {
+    margin-top: 40px; /* Больший отступ сверху для разделов */
+}
+
+.section h2 {
+    border-bottom: 2px solid #343a40; /* Линия подзаголовка раздела */
+    padding-bottom: 10px; /* Внутренний отступ снизу для подзаголовка раздела */
+    color: #343a40; /* Цвет текста подзаголовка раздела */
+}
+        
+        /* Стили для кнопки "Вернуться на главную" */
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 20px;
+            background-color: #FFA500;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00ffff;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        /* Дополнительные стили для контейнера подвала */
+        footer {
+            position: fixed; /* Фиксируем подвал внизу */
+            bottom: 0; /* Размещаем его внизу страницы */
+            width: 100%; /* Занимает всю ширину экрана */
+            background-color: #007bff; /* Голубой цвет фона */
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }

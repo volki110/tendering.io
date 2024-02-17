@@ -1,0 +1,360 @@
+фото главной страницы https://eimg.pravda.com/images/doc/8/0/8004b5e-investitsii.jpg
+
+/* Дополнительные стили для контейнера подвала */
+
+.footer-container {
+    position: fixed; /* Фиксированное положение контейнера */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color:  #000;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Тень подвала */
+}
+
+
+
+.button-container {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+
+
+       /* Общие стили для всех размеров экрана */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+/* Медиа-запросы для разных размеров экрана */
+@media screen and (max-width: 768px) {
+    /* Стили для экранов шириной до 768px */
+    .header, .footer {
+        padding: 10px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Стили для экранов шириной до 480px */
+    .header, .footer {
+        padding: 5px;
+    }
+
+    .content {
+        padding: 5px;
+    }
+}
+
+
+
+
+------------JAVA НЕ ОПТИМИЗИРОВАННЫЙ КОД------------------------
+
+
+
+
+// Получаем все кнопки на странице
+const buttons = document.querySelectorAll('.button');
+
+// Добавляем обработчики событий для каждой кнопки
+buttons.forEach(button => {
+    // Добавляем событие при наведении мыши
+    button.addEventListener('mouseenter', () => {
+        // Изменяем стили при наведении
+        button.style.backgroundColor = '#00ffff'; // Изменяем цвет фона на оранжевый
+        button.style.transform = 'scale(1.1)'; // Увеличиваем размер кнопки
+    });
+
+    // Добавляем событие при уходе мыши
+    button.addEventListener('mouseleave', () => {
+        // Возвращаем исходные стили при уходе мыши
+        button.style.backgroundColor = ''; // Возвращаем цвет фона по умолчанию
+        button.style.transform = ''; // Возвращаем исходный размер кнопки
+    });
+});
+
+// Получаем кнопку "Наверх"
+const myBtn = document.getElementById("myBtn");
+
+// Добавляем обработчик события при скроллинге страницы
+window.addEventListener("scroll", function() {
+    // Если прокрутка больше 20 пикселей, показываем кнопку, иначе скрываем
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        myBtn.style.display = "block";
+    } else {
+        myBtn.style.display = "none";
+    }
+});
+// Добавляем обработчик события при клике на кнопку "Наверх"
+myBtn.addEventListener("click", function() {
+    // Прокручиваем страницу вверх с плавным эффектом
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+
+// Получаем ссылку на элемент, который хотим изменить
+var element = document.getElementById("myElement");
+
+// Добавляем прослушиватель события изменения размера окна
+window.addEventListener("resize", function() {
+  // Получаем текущую ширину экрана
+  var screenWidth = window.innerWidth;
+
+  // Если ширина экрана меньше или равна 768px, добавляем класс "small-screen", иначе удаляем его
+  if (screenWidth <= 768) {
+    element.classList.add("small-screen");
+  } else {
+    element.classList.remove("small-screen");
+  }
+});
+
+
+// Получаем ссылки на элементы модального окна и кнопку для его открытия
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("openModalBtn");
+var span = document.getElementsByClassName("close")[0];
+
+// При клике на кнопку открываем модальное окно
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// При клике на элемент закрытия модального окна, закрываем его
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// При клике вне модального окна, закрываем его
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var openModalBtn = document.getElementById("openModalBtn");
+    var modal = document.getElementById("myModal");
+    var closeModalBtn = modal.getElementsByClassName("close")[0];
+    var buttons = document.querySelectorAll(".button");
+
+    openModalBtn.addEventListener("click", function() {
+        modal.style.display = "block";
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].style.display = "none";
+        }
+    });
+
+    closeModalBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].style.display = "inline-block";
+        }
+    });
+
+    window.addEventListener("click", function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].style.display = "inline-block";
+            }
+        }
+    });
+});
+
+
+
+
+
+
+-----------------------------НЕ ОПТИМИЗИРОВАННЫЙ КОД СSS И ИНСТРУКЦИЯ ПО ЕГО ОПТИМИЗАЦИИ---------------------------
+
+
+
+
+1 Для оптимизации данного кода без изменения его функционала можно сделать следующее:
+
+2 Объединение правил для body: Вместо двух разных блоков стилей для body можно объединить их в один блок.
+
+3 Компактное написание стилей: Используем компактное написание стилей для улучшения читаемости кода.
+
+4 Использование сокращенных свойств: Используем сокращенные свойства CSS там, где это возможно, чтобы уменьшить объем кода.
+
+5 Уменьшение повторяющихся стилей: Проверяем, есть ли повторяющиеся стили, и выносим их в общие классы или переменные.
+
+6 Логическая группировка правил: Группируем правила CSS логически для улучшения организации кода.
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Base Tender.css">
+    <title>Государственные Тендеры</title>
+</head>
+
+<body>
+    <header>
+        <h1>Государственные Тендеры</h1>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="section">
+                <h2>О нас</h2>
+                <p>Добро пожаловать на сайт "Государственные Тендеры"! Мы предоставляем информацию о текущих государственных тендерах и закупках, а также архив предыдущих тендеров. Наши услуги помогут вам быть в курсе последних событий в сфере государственных закупок.</p>
+                
+                
+
+               <!-- Кнопка для открытия модального окна -->
+    <button id="openModalBtn">Открыть модальное окно</button>
+</section>
+  <!-- Модальное окно -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modalTitle">Подробная информация</h2>
+    <p id="modalContent">Это дополнительная информация о нас:</p>
+    <p>Мы - команда профессионалов в области государственных тендеров, специализирующаяся на предоставлении своим клиентам актуальной информации о государственных закупках и тендерах. Наша цель - помочь нашим клиентам оставаться в курсе последних событий в этой области и успешно участвовать в государственных тендерах.</p>
+    <p>Мы предлагаем широкий спектр услуг, включая просмотр текущих тендеров, доступ к архиву предыдущих тендеров, а также удобный интерфейс для поиска и фильтрации тендеров по различным критериям.</p>
+    <p>Наша команда состоит из опытных специалистов с обширным опытом в области государственных закупок, готовых помочь вам в любых вопросах, связанных с государственными тендерами.<br><br>Примеры представлены ниже
+    <div class="tender-images">
+      <img src="img/img7.png" alt="Тендер 1">
+    </div>
+  </div>
+</div>
+           
+            </div>
+            <div class="section">
+                <h2>Наши услуги</h2>
+                <ul>
+                    <li>Просмотр текущих тендеров</li>
+                    <li>Просмотр архива предыдущих тендеров</li>
+                    <li>Удобный интерфейс для поиска и фильтрации тендеров</li>
+                    <li>Информация о государственных закупках различных отраслей</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>Лучшие сотрудники</h2>
+                <div class="employees">
+                    <div class="employee">
+                        <img src="img/img3.jpg" alt="Иванов Иван">
+                        <p>Иванов Иван - менеджер по продажам</p>
+                    </div>
+                    <div class="employee">
+                        <img src="img/img1.jpg" alt="Петрова Анна">
+                        <p>Петрова Анна - специалист по аналитике</p>
+                    </div>
+                    <div class="employee">
+                        <img src="img/img2.jpg" alt="Сидоров Павел">
+                        <p>Сидоров Павел - разработчик веб-приложений</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Как использовать сайт</h2>
+                <p>Чтобы начать пользоваться нашим сайтом, просто выберите один из предложенных вариантов кнопок выше.<br>Для удобства можете воспользоваться кнопкой наверх сайта </p>
+                
+
+                <!-- Блок с кнопками -->
+                <div class="button-container">
+                    <!-- Кнопка для перехода на страницу текущих тендеров -->
+                    <a href="second-page.html" class="button" title="Нажмите, чтобы просмотреть текущие государственные тендеры">Посмотреть Тендеры</a>
+                    <!-- Кнопка для перехода на страницу архива тендеров -->
+                    <a href="archive-page.html" class="button" title="Нажмите, чтобы просмотреть архив предыдущих государственных тендеров">Посмотреть Архив</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+       
+
+        <!-- Авторские права -->
+        <p>Авторские права &copy; 2024 Государственные Тендеры. Все права защищены.</p>
+        <p>Любое воспроизведение материалов сайта допускается только с письменного разрешения владельца.</p>
+        
+        <!-- Контактная информация -->
+        <h2>Контактная информация:</h2>
+        <p>Адрес: ул. Примерная, дом 123, город</p>
+        <p>Телефон: +7 (123) 456-7890</p>
+        <p>Email: info@example.com</p>
+    </footer>
+
+   
+     <!-- Кнопка "Наверх" -->
+    <button onclick="topFunction()" id="myBtn" title="Наверх сайта">&#9650;</button>
+
+    <!-- Скрипт JavaScript -->
+    <script src="javaScript/script.js"></script> <!-- Подключение внешнего JavaScript-файла -->
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 99999; /* Устанавливаем еще более высокий уровень z-index */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #888;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center; /* Выравниваем текст по центру */
+}
